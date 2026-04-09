@@ -6,18 +6,35 @@ const revealItems = document.querySelectorAll('.reveal');
 const yearNode = document.getElementById('year');
 const projectFilterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const typingTextNode = document.getElementById('typing-text');
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 16) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
+if (header) {
+  let headerRafPending = false;
+
+  const updateHeaderState = () => {
+    header.classList.toggle('scrolled', window.scrollY > 16);
+  };
+
+  const handleScroll = () => {
+    if (headerRafPending) {
+      return;
+    }
+
+    headerRafPending = true;
+
+    window.requestAnimationFrame(() => {
+      updateHeaderState();
+      headerRafPending = false;
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  updateHeaderState();
+}
 
 if (menuButton) {
   menuButton.addEventListener('click', () => {
@@ -98,6 +115,45 @@ if (projectFilterButtons.length && projectCards.length) {
   });
 
   applyProjectFilter('all');
+}
+
+if (typingTextNode) {
+  const roleTexts = [
+    'Full stack Developer',
+    'Backend Developer',
+    'Aspiring ServiceNow Developer',
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const runTypingLoop = () => {
+    const currentRole = roleTexts[roleIndex];
+
+    if (isDeleting) {
+      charIndex -= 1;
+    } else {
+      charIndex += 1;
+    }
+
+    typingTextNode.textContent = currentRole.slice(0, charIndex);
+
+    let delay = isDeleting ? 55 : 90;
+
+    if (!isDeleting && charIndex >= currentRole.length) {
+      isDeleting = true;
+      delay = 1300;
+    } else if (isDeleting && charIndex <= 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roleTexts.length;
+      delay = 340;
+    }
+
+    window.setTimeout(runTypingLoop, delay);
+  };
+
+  runTypingLoop();
 }
 
 const revealObserver = new IntersectionObserver(

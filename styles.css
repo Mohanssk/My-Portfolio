@@ -61,75 +61,135 @@ a {
   z-index: -1;
   overflow: hidden;
   background:
-    radial-gradient(120% 95% at 15% 8%, rgba(58, 123, 255, 0.22) 0%, rgba(58, 123, 255, 0) 60%),
-    radial-gradient(95% 90% at 92% 12%, rgba(253, 139, 81, 0.18) 0%, rgba(253, 139, 81, 0) 58%),
-    linear-gradient(170deg, #060910 0%, #0a1228 45%, #071221 100%);
+    radial-gradient(130% 96% at 12% 0%, rgba(58, 123, 255, 0.42) 0%, rgba(58, 123, 255, 0) 55%),
+    radial-gradient(90% 100% at 92% 14%, rgba(255, 115, 66, 0.3) 0%, rgba(255, 115, 66, 0) 58%),
+    linear-gradient(180deg, #040813 0%, #060d1f 42%, #050a17 100%);
+}
+
+.background-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(129, 147, 189, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(129, 147, 189, 0.08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(130% 90% at 50% 20%, #000 25%, transparent 85%);
+  opacity: 0.32;
+}
+
+.background-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(130% 90% at 50% -10%, transparent 46%, rgba(2, 6, 15, 0.68) 100%);
 }
 
 .blob {
   position: absolute;
   border-radius: 999px;
-  filter: blur(48px);
-  opacity: 0.55;
+  filter: blur(72px);
+  opacity: 0.56;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .blob-1 {
-  width: 520px;
-  height: 520px;
-  left: -160px;
-  top: -180px;
-  background: radial-gradient(circle at center, #2f77ff 0%, #2f77ff00 66%);
-  animation: driftA 12s ease-in-out infinite alternate;
+  width: 640px;
+  height: 640px;
+  left: -210px;
+  top: -220px;
+  background: radial-gradient(circle at center, rgba(45, 123, 255, 0.9) 0%, rgba(45, 123, 255, 0) 68%);
+  animation: driftA 26s linear infinite alternate;
 }
 
 .blob-2 {
-  width: 560px;
-  height: 560px;
-  right: -190px;
-  top: 18%;
-  background: radial-gradient(circle at center, #ff6f3c 0%, #ff6f3c00 62%);
-  animation: driftB 15s ease-in-out infinite alternate;
+  width: 620px;
+  height: 620px;
+  right: -230px;
+  top: 10%;
+  background: radial-gradient(circle at center, rgba(255, 114, 64, 0.86) 0%, rgba(255, 114, 64, 0) 64%);
+  animation: driftB 32s linear infinite alternate;
 }
 
 .wave {
   position: absolute;
-  left: -24%;
-  width: 148%;
-  height: 48vh;
-  border-radius: 54% 46% 58% 42% / 40% 44% 56% 60%;
-  filter: blur(18px);
-  opacity: 0.5;
+  left: -12%;
+  width: 124%;
+  height: 52vh;
+  border-radius: 58% 42% 62% 38% / 52% 48% 58% 42%;
+  filter: blur(56px);
+  opacity: 0.36;
   transform-origin: center bottom;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .wave-1 {
-  bottom: 8%;
+  bottom: -12%;
   background:
-    radial-gradient(140% 95% at 18% 18%, rgba(65, 211, 189, 0.48) 0%, rgba(65, 211, 189, 0) 62%),
-    radial-gradient(120% 90% at 78% 26%, rgba(58, 123, 255, 0.42) 0%, rgba(58, 123, 255, 0) 66%),
-    linear-gradient(105deg, rgba(65, 211, 189, 0.24) 0%, rgba(58, 123, 255, 0.2) 45%, rgba(253, 139, 81, 0.16) 100%);
-  clip-path: polygon(0% 43%, 9% 40%, 20% 44%, 31% 38%, 42% 43%, 53% 37%, 64% 41%, 75% 36%, 86% 40%, 100% 34%, 100% 100%, 0% 100%);
-  animation: waveShift 20s ease-in-out infinite alternate;
+    radial-gradient(118% 100% at 18% 20%, rgba(65, 211, 189, 0.4) 0%, rgba(65, 211, 189, 0) 62%),
+    radial-gradient(108% 100% at 78% 32%, rgba(58, 123, 255, 0.38) 0%, rgba(58, 123, 255, 0) 68%),
+    linear-gradient(105deg, rgba(65, 211, 189, 0.16) 0%, rgba(58, 123, 255, 0.2) 45%, rgba(255, 114, 64, 0.14) 100%);
+  animation: waveShift 40s linear infinite alternate;
 }
 
 .wave-2 {
-  bottom: -12%;
-  height: 54vh;
-  opacity: 0.52;
+  bottom: -24%;
+  height: 58vh;
+  opacity: 0.3;
   background:
-    radial-gradient(150% 98% at 26% 14%, rgba(58, 123, 255, 0.44) 0%, rgba(58, 123, 255, 0) 62%),
-    radial-gradient(130% 95% at 85% 28%, rgba(253, 139, 81, 0.36) 0%, rgba(253, 139, 81, 0) 64%),
-    linear-gradient(115deg, rgba(58, 123, 255, 0.24) 0%, rgba(65, 211, 189, 0.22) 48%, rgba(253, 139, 81, 0.2) 100%);
-  clip-path: polygon(0% 47%, 11% 43%, 22% 48%, 34% 41%, 46% 47%, 58% 40%, 70% 45%, 82% 39%, 92% 44%, 100% 40%, 100% 100%, 0% 100%);
-  animation: waveShiftReverse 24s ease-in-out infinite alternate;
+    radial-gradient(126% 96% at 24% 18%, rgba(58, 123, 255, 0.34) 0%, rgba(58, 123, 255, 0) 65%),
+    radial-gradient(108% 96% at 88% 32%, rgba(255, 114, 64, 0.28) 0%, rgba(255, 114, 64, 0) 64%),
+    linear-gradient(116deg, rgba(58, 123, 255, 0.16) 0%, rgba(65, 211, 189, 0.12) 50%, rgba(255, 114, 64, 0.12) 100%);
+  animation: waveShiftReverse 52s linear infinite alternate;
 }
 
 .grain {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 0.6px, transparent 0.7px);
-  background-size: 3px 3px;
-  opacity: 0.12;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.055) 0.7px, transparent 0.8px);
+  background-size: 2px 2px;
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+}
+
+/* Background preset: subtle */
+body.bg-subtle .background-wrap {
+  background:
+    radial-gradient(130% 96% at 12% 0%, rgba(58, 123, 255, 0.28) 0%, rgba(58, 123, 255, 0) 56%),
+    radial-gradient(90% 100% at 92% 14%, rgba(255, 115, 66, 0.2) 0%, rgba(255, 115, 66, 0) 60%),
+    linear-gradient(180deg, #040813 0%, #060d1f 42%, #050a17 100%);
+}
+
+body.bg-subtle .background-wrap::before {
+  opacity: 0.2;
+}
+
+body.bg-subtle .blob {
+  opacity: 0.34;
+  filter: blur(74px);
+}
+
+body.bg-subtle .wave {
+  opacity: 0.19;
+  filter: blur(58px);
+}
+
+body.bg-subtle .wave-1 {
+  animation-duration: 46s;
+}
+
+body.bg-subtle .wave-2 {
+  animation-duration: 60s;
+}
+
+body.bg-subtle .grain {
+  opacity: 0.05;
 }
 
 .site-header {
@@ -218,21 +278,19 @@ a {
   min-width: 0;
 }
 
-.hero-image-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-}
+@media (min-width: 1100px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 5.6rem;
+    padding-bottom: 2.6rem;
+    display: flex;
+    align-items: center;
+  }
 
-.hero-profile-image {
-  width: min(100%, 200px);
-  max-width: 200px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35), 0 0 0 6px rgba(65, 211, 189, 0.15);
+  .hero-layout {
+    width: 100%;
+    align-items: center;
+  }
 }
 
 .eyebrow {
@@ -255,6 +313,31 @@ h1 {
   margin-top: 0.9rem;
   font-size: clamp(2.15rem, 5vw, 4rem);
   max-width: 900px;
+}
+
+.wave-hand {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: waveHand 2.2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  will-change: transform;
+}
+
+.hero-typed-line {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.58em;
+  line-height: 1.22;
+  min-height: 1.3em;
+}
+
+.typing-caret {
+  display: inline-block;
+  width: 0.1em;
+  height: 0.96em;
+  margin-left: 0.12em;
+  vertical-align: -0.06em;
+  background: linear-gradient(180deg, #41d3bd, #3a7bff);
+  animation: caretBlink 0.95s step-end infinite;
 }
 
 .gradient-text {
@@ -444,6 +527,7 @@ h1 {
 .project-card {
   padding: 1.3rem;
   transition: transform 0.25s ease, border-color 0.25s ease, opacity 0.22s ease;
+  will-change: transform, opacity;
 }
 
 .project-card:hover {
@@ -663,65 +747,98 @@ h1 {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translate3d(0, 24px, 0);
   transition: opacity 0.65s ease, transform 0.65s ease;
+  will-change: transform, opacity;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes waveShift {
-  0% {
-    transform: translate3d(-2%, 2%, 0) scale(1.01);
+  from {
+    transform: translate3d(-2%, 1%, 0) scale(1);
   }
-  50% {
-    transform: translate3d(1.8%, -1.5%, 0) scale(1.05);
-  }
-  100% {
-    transform: translate3d(3%, 1.8%, 0) scale(1.03);
+  to {
+    transform: translate3d(2.2%, -1.6%, 0) scale(1.04);
   }
 }
 
 @keyframes waveShiftReverse {
-  0% {
-    transform: translate3d(2%, 0, 0) scale(1.02);
+  from {
+    transform: translate3d(2%, 0.6%, 0) scale(1.01);
   }
-  50% {
-    transform: translate3d(-1.6%, -1.8%, 0) scale(1.06);
-  }
-  100% {
-    transform: translate3d(-3%, 1.5%, 0) scale(1.03);
+  to {
+    transform: translate3d(-2.4%, -1.8%, 0) scale(1.05);
   }
 }
 
 @keyframes driftA {
-  0% {
-    transform: translate(0, 0) scale(1);
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  100% {
-    transform: translate(45px, 30px) scale(1.08);
+  to {
+    transform: translate3d(38px, 26px, 0) scale(1.06);
   }
 }
 
 @keyframes driftB {
-  0% {
-    transform: translate(0, 0) scale(1);
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  100% {
-    transform: translate(-50px, -35px) scale(1.05);
+  to {
+    transform: translate3d(-40px, -28px, 0) scale(1.06);
   }
 }
 
 @keyframes projectFadeUp {
   from {
     opacity: 0;
-    transform: translateY(14px) scale(0.98);
+    transform: translate3d(0, 14px, 0) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes waveHand {
+  0% {
+    transform: rotate(0deg);
+  }
+  14% {
+    transform: rotate(12deg);
+  }
+  28% {
+    transform: rotate(-9deg);
+  }
+  42% {
+    transform: rotate(12deg);
+  }
+  56% {
+    transform: rotate(-4deg);
+  }
+  70% {
+    transform: rotate(8deg);
+  }
+  82% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes caretBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
   }
 }
 
@@ -759,19 +876,11 @@ h1 {
     flex-direction: column;
     align-items: center;
     text-align: left;
+    gap: 1.25rem;
   }
 
   .hero-intro {
     width: 100%;
-  }
-
-  .hero-image-wrap {
-    order: -1;
-    width: 100%;
-  }
-
-  .hero-profile-image {
-    max-width: 170px;
   }
 
   .menu-btn {
@@ -812,7 +921,7 @@ h1 {
   }
 
   .hero {
-    padding-top: 5.8rem;
+    padding-top: 5.2rem;
   }
 
   .section {
@@ -824,5 +933,16 @@ h1 {
     justify-content: center;
     text-align: center;
     padding: 1rem 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .hero {
+    padding-top: 4.9rem;
+  }
+
+  .quick-meta li {
+    width: 100%;
+    text-align: center;
   }
 }
