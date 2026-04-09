@@ -211,8 +211,7 @@ h3 {
 
 h1 {
   margin-top: 0.9rem;
-  font-size: clamp(2.35rem, 6.4vw, 4.85rem);
-  line-height: 1.14;
+  font-size: clamp(2.15rem, 5vw, 4rem);
   max-width: 900px;
 }
 
@@ -684,31 +683,10 @@ h1 {
   }
 }
 
-@media (max-width: 1160px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .route-stop {
-    width: calc(50% - 1.6rem);
-  }
-}
-
 @media (max-width: 980px) {
+  .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 4.8rem 0;
-  }
-
-  .hero {
-    padding-top: 6rem;
-  }
-
-  .hero-copy {
-    max-width: 100%;
   }
 
   .route-map::before {
@@ -735,23 +713,15 @@ h1 {
 }
 
 @media (max-width: 760px) {
-  .nav {
-    min-height: 70px;
-  }
-
-  .brand {
-    font-size: 0.96rem;
-  }
-
   .menu-btn {
     display: inline-block;
   }
 
   .nav-links {
     position: fixed;
-    top: 70px;
-    right: 0.7rem;
-    left: 0.7rem;
+    top: 78px;
+    right: 1rem;
+    left: 1rem;
     flex-direction: column;
     gap: 0.2rem;
     padding: 0.65rem;
@@ -781,42 +751,7 @@ h1 {
   }
 
   .hero {
-    padding-top: 5.5rem;
-  }
-
-  .hero-actions {
-    width: 100%;
-  }
-
-  .hero-actions .btn,
-  .contact-card .hero-actions .btn {
-    flex: 1 1 100%;
-  }
-
-  .projects-toolbar {
-    margin-bottom: 1rem;
-  }
-
-  .filter-list {
-    flex-wrap: nowrap;
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 0.15rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .filter-list::-webkit-scrollbar {
-    display: none;
-  }
-
-  .filter-btn {
-    white-space: nowrap;
-    flex: 0 0 auto;
-  }
-
-  .project-links a {
-    flex: 1 1 auto;
+    padding-top: 5.8rem;
   }
 
   .section {
@@ -828,86 +763,5 @@ h1 {
     justify-content: center;
     text-align: center;
     padding: 1rem 0;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    width: min(1120px, calc(100% - 1.2rem));
-  }
-
-  .section {
-    padding: 3.7rem 0;
-  }
-
-  .card,
-  .about-card,
-  .skill-card,
-  .project-card,
-  .timeline-item,
-  .contact-card {
-    border-radius: 16px;
-  }
-
-  .about-card,
-  .skill-card,
-  .project-card,
-  .timeline-item {
-    padding: 1rem;
-  }
-
-  .route-stop {
-    padding-left: 1.7rem;
-  }
-
-  .route-map::before {
-    left: 0.88rem;
-  }
-
-  .route-stop::before,
-  .route-stop:nth-child(odd)::before,
-  .route-stop:nth-child(even)::before {
-    left: 0.42rem;
-    width: 12px;
-    height: 12px;
-  }
-
-  .project-tags {
-    gap: 0.42rem;
-  }
-
-  .project-tag {
-    font-size: 0.72rem;
-  }
-
-  .contact-card {
-    padding: 1.4rem 1rem;
-  }
-
-  .footer-inner {
-    font-size: 0.86rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero {
-    padding-top: 5rem;
-  }
-
-  h1 {
-    font-size: clamp(2.05rem, 9.2vw, 2.55rem);
-    line-height: 1.16;
-  }
-
-  .quick-meta li {
-    width: 100%;
-    text-align: center;
-    font-size: 0.84rem;
-  }
-
-  .route-index {
-    min-width: 1.9rem;
-    height: 1.9rem;
-    font-size: 0.75rem;
   }
 }
