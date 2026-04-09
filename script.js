@@ -7,6 +7,9 @@ const yearNode = document.getElementById('year');
 const projectFilterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 const typingTextNode = document.getElementById('typing-text');
+const openCvModalButton = document.getElementById('open-cv-modal');
+const closeCvModalButton = document.getElementById('close-cv-modal');
+const cvModal = document.getElementById('cv-modal');
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
@@ -154,6 +157,44 @@ if (typingTextNode) {
   };
 
   runTypingLoop();
+}
+
+if (cvModal && openCvModalButton) {
+  const closeCvModal = () => {
+    cvModal.classList.remove('is-open');
+    cvModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('cv-open');
+  };
+
+  const openCvModal = () => {
+    cvModal.classList.add('is-open');
+    cvModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('cv-open');
+  };
+
+  openCvModalButton.addEventListener('click', openCvModal);
+
+  if (closeCvModalButton) {
+    closeCvModalButton.addEventListener('click', closeCvModal);
+  }
+
+  cvModal.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+
+    if (target.dataset.closeCv === 'true') {
+      closeCvModal();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && cvModal.classList.contains('is-open')) {
+      closeCvModal();
+    }
+  });
 }
 
 const revealObserver = new IntersectionObserver(

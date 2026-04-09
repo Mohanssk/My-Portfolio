@@ -9,6 +9,7 @@
   --secondary: #3a7bff;
   --accent: #fd8b51;
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --anchor-offset: 6.6rem;
 }
 
 * {
@@ -53,6 +54,10 @@ a {
 
 .section {
   padding: 5.5rem 0;
+}
+
+section[id] {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 .background-wrap {
@@ -388,6 +393,124 @@ h1 {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.btn-cv {
+  color: #eaf1ff;
+  border-color: rgba(109, 158, 255, 0.42);
+  background: linear-gradient(115deg, rgba(58, 123, 255, 0.22), rgba(65, 211, 189, 0.16) 56%, rgba(255, 114, 64, 0.14));
+  box-shadow: 0 12px 24px rgba(58, 123, 255, 0.16);
+}
+
+.btn-cv:hover {
+  border-color: rgba(65, 211, 189, 0.6);
+  box-shadow: 0 15px 30px rgba(58, 123, 255, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+body.cv-open {
+  overflow: hidden;
+}
+
+.cv-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cv-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cv-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 10%, rgba(58, 123, 255, 0.18), transparent 44%),
+    rgba(4, 8, 18, 0.78);
+  backdrop-filter: blur(6px);
+}
+
+.cv-modal-panel {
+  position: relative;
+  width: min(100%, 980px);
+  max-height: min(92vh, 880px);
+  border-radius: 18px;
+  border: 1px solid rgba(151, 175, 222, 0.3);
+  background: linear-gradient(170deg, rgba(10, 18, 36, 0.95), rgba(8, 14, 28, 0.95));
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transform: translateY(14px) scale(0.98);
+  transition: transform 0.32s ease;
+}
+
+.cv-modal.is-open .cv-modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.cv-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.2rem 0.2rem 0;
+}
+
+.cv-modal-head h3 {
+  font-size: 1.15rem;
+}
+
+.cv-modal-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.cv-modal-close:hover {
+  border-color: rgba(65, 211, 189, 0.58);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cv-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.cv-modal-viewer {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(149, 172, 215, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cv-modal-viewer iframe {
+  width: 100%;
+  height: min(72vh, 760px);
+  border: 0;
+  background: #0b1020;
+}
+
 .quick-meta {
   list-style: none;
   display: flex;
@@ -424,6 +547,53 @@ h1 {
 
 .about-card {
   padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.about-content {
+  flex: 1 1 680px;
+  min-width: 0;
+}
+
+.about-image-wrap {
+  flex: 0 0 clamp(190px, 20vw, 240px);
+  width: clamp(190px, 20vw, 240px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 16px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(175, 194, 236, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.about-profile-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center 25%;
+  border-radius: 14px;
+  border: 1px solid rgba(175, 194, 236, 0.28);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.32);
+  transition: transform 0.36s ease, filter 0.36s ease, box-shadow 0.36s ease;
+}
+
+.about-image-wrap:hover {
+  transform: translateY(-4px);
+  border-color: rgba(65, 211, 189, 0.42);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34);
+}
+
+.about-image-wrap:hover .about-profile-image {
+  transform: scale(1.04);
+  filter: saturate(1.06);
 }
 
 .about-card p {
@@ -842,6 +1012,69 @@ h1 {
   }
 }
 
+/* Extra smoothing for mobile and mid-range GPUs */
+@media (max-width: 980px), (pointer: coarse) {
+  .background-wrap::before {
+    opacity: 0.1;
+    background-size: 72px 72px;
+  }
+
+  .background-wrap::after {
+    background: radial-gradient(140% 95% at 50% -12%, transparent 48%, rgba(2, 6, 15, 0.8) 100%);
+  }
+
+  .blob {
+    filter: blur(52px);
+    opacity: 0.22;
+    mix-blend-mode: normal;
+  }
+
+  .blob-2 {
+    display: none;
+  }
+
+  .wave {
+    filter: blur(38px);
+    opacity: 0.12;
+    mix-blend-mode: normal;
+  }
+
+  .wave-2 {
+    display: none;
+  }
+
+  .grain {
+    opacity: 0.02;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .blob,
+  .wave,
+  .wave-hand,
+  .typing-caret,
+  .project-card.filter-in {
+    animation: none !important;
+  }
+
+  .reveal,
+  .project-card,
+  .about-image-wrap,
+  .about-profile-image,
+  .btn,
+  .filter-btn,
+  .social-links a,
+  .project-links a,
+  .route-cert-btn,
+  .nav-links {
+    transition: none !important;
+  }
+}
+
 @media (max-width: 980px) {
   .skills-grid,
   .projects-grid {
@@ -881,6 +1114,27 @@ h1 {
 
   .hero-intro {
     width: 100%;
+  }
+
+  .about-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .about-content {
+    flex: 0 1 auto;
+    width: 100%;
+  }
+
+  .about-image-wrap {
+    width: min(68vw, 220px);
+    justify-content: center;
+  }
+
+  .about-profile-image {
+    width: 100%;
+    max-width: none;
   }
 
   .menu-btn {
@@ -924,6 +1178,27 @@ h1 {
     padding-top: 5.2rem;
   }
 
+  .cv-modal {
+    padding: 0.75rem;
+  }
+
+  .cv-modal-panel {
+    padding: 0.7rem;
+    border-radius: 14px;
+  }
+
+  .cv-modal-actions {
+    width: 100%;
+  }
+
+  .cv-modal-actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .cv-modal-viewer iframe {
+    height: min(64vh, 560px);
+  }
+
   .section {
     padding: 4.2rem 0;
   }
@@ -939,6 +1214,10 @@ h1 {
 @media (max-width: 460px) {
   .hero {
     padding-top: 4.9rem;
+  }
+
+  :root {
+    --anchor-offset: 6rem;
   }
 
   .quick-meta li {
