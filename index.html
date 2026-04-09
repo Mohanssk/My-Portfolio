@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mohana Sri Sai Karuparthi - Full Stack Developer and AI enthusiast building user-centric web applications."
+    />
+    <meta name="theme-color" content="#0b1020" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Mohan Karuparthi | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-wrap" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#home" class="brand">Mohan<span>Karuparthi</span></a>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#timeline">Journey</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero container section reveal">
+        <p class="eyebrow">Full Stack Developer | AI Enthusiast | Problem Solver</p>
+        <h1>
+          Building web products that feel
+          <span class="gradient-text">fast, useful, and memorable.</span>
+        </h1>
+        <p class="hero-copy">
+          I am Mohana Sri Sai Karuparthi, a Computer Science undergraduate focused on
+          full-stack engineering,Data Structures and Algorithms, and AI-powered features, and production-ready web experiences.
+        </p>
+        <div class="hero-actions flex flex-col w-full gap-3 md:w-auto md:flex-row md:gap-4">
+          <a class="btn btn-primary w-full md:w-auto" href="#projects">View Projects</a>
+          <a class="btn btn-ghost w-full md:w-auto" href="mailto:mohankaruparthi7@gmail.com">Email Me</a>
+        </div>
+        <ul class="quick-meta">
+          <li>Amalapuram, Andhra Pradesh, India</li>
+          <li>6+ production web applications</li>
+          <li>B.Tech CSE, Class of 2027</li>
+        </ul>
+      </section>
+
+      <section id="about" class="container section reveal">
+        <div class="section-head">
+          <h2>About Me</h2>
+        </div>
+        <div class="card about-card">
+          <p>
+            I love turning ideas into functional products, from concept to deployment. My current
+            focus is on building AI-assisted web applications with clear UX, clean APIs, and
+            maintainable architecture.
+          </p>
+          <p>
+            I enjoy solving practical problems, learning deeply by building, and shipping projects
+            that deliver real user value.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/mohansrisaikaruparthi" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/Mohanssk" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:mohankaruparthi7@gmail.com">Email</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="container section reveal">
+        <div class="section-head">
+          <h2>Technical Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <h3>Languages</h3>
+            <p>JavaScript (ES6+), Python, C++, SQL, HTML5, CSS3</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Frameworks</h3>
+            <p>React.js, Node.js, Express.js, Tailwind CSS, Bootstrap 5</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code, Vercel, npm, Postman</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Core Concepts</h3>
+            <p>Data Structures, Algorithms, REST APIs, OOP, Auth, Responsive Design</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="container section reveal">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+        </div>
+        <div class="projects-toolbar" aria-label="Project filters">
+          <div class="filter-list" role="group" aria-label="Filter projects by category">
+            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-btn" data-filter="fullstack" aria-pressed="false">Full Stack</button>
+            <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">AI/ML</button>
+            <button type="button" class="filter-btn" data-filter="backend" aria-pressed="false">Backend</button>
+            <button type="button" class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
+          </div>
+        </div>
+        <div class="projects-grid">
+          <article class="card project-card" data-categories="fullstack frontend backend">
+            <h3>Gyan Ganga</h3>
+            <p class="stack">React.js | Node.js | REST APIs</p>
+            <p>
+              Gamified Ed-Tech platform for grades 6-12 with NCERT-aligned content, XP system,
+              and teacher dashboards for progress tracking.
+            </p>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">Full Stack</span>
+              <span class="project-tag">Frontend</span>
+              <span class="project-tag">Backend</span>
+            </div>
+            <div class="project-links">
+              <a href="https://gyan-ganga-mk7.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/Mohanssk/gyan-ganga" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="ai fullstack frontend">
+            <h3>Sign Vision</h3>
+            <p class="stack">Python | Computer Vision | TensorFlow | React</p>
+            <p>
+              Real-time ASL to speech translator using webcam input with offline capability and
+              accessibility-first interface design.
+            </p>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Full Stack</span>
+              <span class="project-tag">Frontend</span>
+            </div>
+            <div class="project-links">
+              <a href="https://sign-vision-mk7.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/Mohanssk/Sign-Vision" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="ai fullstack frontend backend">
+            <h3>AI Career Roadmap Generator</h3>
+            <p class="stack">React.js | Node.js | AI APIs | Vercel</p>
+            <p>
+              Personalized roadmap generator with interactive node-based progression and AI mentor
+              guidance for career planning.
+            </p>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Full Stack</span>
+              <span class="project-tag">Backend</span>
+            </div>
+            <div class="project-links">
+              <a href="https://roadmap-project-mk7.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/Mohanssk/Ai-powerd-leaningpath" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="fullstack frontend backend">
+            <h3>SemPrep</h3>
+            <p class="stack">React.js | Node.js | MongoDB | Auth</p>
+            <p>
+              Role-based academic notes platform for students and teachers with structured metadata
+              and search-friendly upload workflows.
+            </p>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">Full Stack</span>
+              <span class="project-tag">Backend</span>
+              <span class="project-tag">Frontend</span>
+            </div>
+            <div class="project-links">
+              <a href="https://sem-prep.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/Mohanssk/Sem_Prep" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="backend">
+            <h3>Iris Data API</h3>
+            <p class="stack">Node.js | Express.js | REST | Vercel</p>
+            <p>
+              Production-style API for the Iris dataset with collection and individual lookup
+              endpoints and interactive testing support.
+            </p>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">Backend</span>
+              <span class="project-tag">API Design</span>
+            </div>
+            <div class="project-links">
+              <a href="https://iris-api-mk7.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/Mohanssk/Iris-API" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="frontend">
+            <h3>Task Management App</h3>
+            <p class="stack">JavaScript | HTML5 | CSS3 | Local Storage</p>
+            <p>
+              Clean task manager with CRUD actions, persistent browser storage, and responsive
+              layouts for daily productivity.
+            </p>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">Frontend</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://to-do-list-mk7.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/Mohanssk/To-do-list" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="timeline" class="container section reveal">
+        <div class="section-head">
+          <h2>Journey Route Map</h2>
+        </div>
+        <div class="timeline route-map" aria-label="Career route timeline">
+          <article class="card timeline-item route-stop">
+            <span class="route-index">01</span>
+            <h3>Diploma - BVC Institute of Technology and Science</h3>
+            <p>Computer Engineering | CGPA 8.8</p>
+            <span>June 2021 - April 2024 | Andhra Pradesh, India</span>
+          </article>
+
+          <article class="card timeline-item route-stop">
+            <span class="route-index">02</span>
+            <h3>Karvy Data Management Services Limited</h3>
+            <p>Quality Control Operator Internship</p>
+            <span>December 2023 - May 2024 | Hyderabad, India</span>
+          </article>
+
+          <article class="card timeline-item route-stop">
+            <span class="route-index">03</span>
+            <h3>B.Tech - BVC Engineering College (BVCE)</h3>
+            <p>Computer Science and Engineering | CGPA 8.29</p>
+            <p class="certification-note">
+              Certification: The Complete Full-Stack Web Development Bootcamp (The App Brewery / Udemy), 2024
+            </p>
+            <a
+              class="route-cert-btn"
+              href="https://www.udemy.com/certificate/UC-8580e863-b7c9-41d1-a9e5-cb022e56957e/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Certificate
+            </a>
+            <span>July 2024 - April 2027 | Andhra Pradesh, India</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="container section reveal">
+        <div class="contact-card card">
+          <h2>Let Us Build Something Useful</h2>
+          <p>
+            I am open to internships, freelance opportunities, and collaborations in full-stack and
+            AI-focused projects.
+          </p>
+          <div class="hero-actions flex flex-col w-full gap-3 md:w-auto md:flex-row md:gap-4">
+            <a class="btn btn-primary w-full md:w-auto" href="mailto:mohankaruparthi7@gmail.com">Start a Conversation</a>
+            <a class="btn btn-ghost w-full md:w-auto" href="https://www.linkedin.com/in/mohansrisaikaruparthi" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Build things that matter. Learn every day.</p>
+        <p><span id="year"></span> Mohan Karuparthi</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
