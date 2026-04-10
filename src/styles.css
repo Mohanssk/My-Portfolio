@@ -268,28 +268,32 @@ body.bg-subtle .grain {
 }
 
 .hero {
-  padding-top: 6.8rem;
+  min-height: calc(100vh - 78px);
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hero-layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2.2rem;
+  transform: translateY(-0.9rem);
 }
 
 .hero-intro {
   flex: 1 1 680px;
+  max-width: 920px;
   min-width: 0;
+  margin-inline: auto;
+  text-align: center;
 }
 
 @media (min-width: 1100px) {
   .hero {
-    min-height: 100vh;
-    padding-top: 5.6rem;
-    padding-bottom: 2.6rem;
-    display: flex;
-    align-items: center;
+    min-height: calc(100vh - 78px);
   }
 
   .hero-layout {
@@ -318,6 +322,7 @@ h1 {
   margin-top: 0.9rem;
   font-size: clamp(2.15rem, 5vw, 4rem);
   max-width: 900px;
+  margin-inline: auto;
 }
 
 .wave-hand {
@@ -355,6 +360,7 @@ h1 {
 .hero-copy {
   color: var(--muted);
   max-width: 740px;
+  margin-inline: auto;
   margin-top: 1.2rem;
   font-size: clamp(1rem, 2vw, 1.16rem);
 }
@@ -362,6 +368,7 @@ h1 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.9rem;
   margin-top: 1.8rem;
 }
@@ -515,6 +522,7 @@ body.cv-open {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
   margin: 1.6rem 0 0;
   padding: 0;
@@ -1110,6 +1118,7 @@ body.cv-open {
     align-items: center;
     text-align: left;
     gap: 1.25rem;
+    transform: none;
   }
 
   .hero-intro {
@@ -1175,7 +1184,9 @@ body.cv-open {
   }
 
   .hero {
+    min-height: auto;
     padding-top: 5.2rem;
+    padding-bottom: 1.8rem;
   }
 
   .cv-modal {
@@ -1214,6 +1225,7 @@ body.cv-open {
 @media (max-width: 460px) {
   .hero {
     padding-top: 4.9rem;
+    padding-bottom: 1.4rem;
   }
 
   :root {

@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# production build
+dist/
+
+# local environment files
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# macOS
+.DS_Store
+
+# Vercel
+.vercel/
+
+# editor/temp
+.vscode/
+.idea/
+*.swp
+*.swo

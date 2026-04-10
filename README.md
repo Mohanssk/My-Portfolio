@@ -1,30 +1,55 @@
-# Mohan Karuparthi Portfolio
+# Mohan Karuparthi Portfolio (React)
 
-A dark-themed, gradient-wave personal portfolio built with plain HTML, CSS, and JavaScript.
+A deployment-ready personal portfolio built with React and Vite, styled with custom CSS, and configured for Vercel.
 
-## Tech
+## Tech Stack
 
-- HTML
-- CSS
-- JavaScript
-- Vercel (static hosting)
+- React 18
+- Vite 5
+- Custom CSS
+- Vercel
 
-## Local Preview
+## Project Structure
 
-You can open `index.html` directly in a browser, or run a local static server:
+- `index.html` - Vite entry HTML
+- `src/main.jsx` - React bootstrap
+- `src/App.jsx` - main portfolio component
+- `src/styles.css` - complete styling and animations
+- `public/profile.png` - profile image asset
+- `public/Mohan_Resume.pdf` - resume PDF
+- `vercel.json` - Vercel build and routing config
+
+## Run Locally
+
+1. Install dependencies:
 
 ```bash
-npx serve .
+npm install
+```
+
+2. Start dev server:
+
+```bash
+npm run dev
+```
+
+3. Open the URL shown in terminal (usually `http://localhost:5173`).
+
+## Production Build Check
+
+```bash
+npm run build
+npm run preview
 ```
 
 ## Deploy To Vercel
 
-1. Push this folder to a GitHub repository.
+1. Push this project to GitHub.
 2. Go to Vercel dashboard and click **Add New Project**.
-3. Import the repository.
-4. Framework preset: **Other** (or leave auto-detected).
-5. Build command: leave empty.
-6. Output directory: leave empty.
+3. Import your repository.
+4. Framework preset: **Vite**.
+5. Build command: `npm run build`.
+6. Output directory: `dist`.
 7. Deploy.
 
-This project includes `vercel.json` with clean URL settings.
+`vercel.json` is already configured for Vite build output and SPA rewrites.
