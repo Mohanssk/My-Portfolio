@@ -45,7 +45,7 @@ function About() {
             showIcon={false}
             showUserInfo={false}
             enableTilt={true}
-            enableMobileTilt={false}
+            enableMobileTilt={true}
             onContactClick={() => console.log('Contact clicked')}
             behindGlowColor="rgba(125, 190, 255, 0.67)"
             behindGlowEnabled={false}
