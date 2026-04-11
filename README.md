@@ -41,15 +41,3 @@ npm run dev
 npm run build
 npm run preview
 ```
-
-## Deploy To Vercel
-
-1. Push this project to GitHub.
-2. Go to Vercel dashboard and click **Add New Project**.
-3. Import your repository.
-4. Framework preset: **Vite**.
-5. Build command: `npm run build`.
-6. Output directory: `dist`.
-7. Deploy.
-
-`vercel.json` is already configured for Vite build output and SPA rewrites.
