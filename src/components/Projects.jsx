@@ -1,4 +1,5 @@
 import React from 'react';
+import MagicBento from './MagicBento';
 import { projectFilters, projects } from '../data/portfolioData';
 
 function Projects() {
@@ -22,34 +23,20 @@ function Projects() {
           ))}
         </div>
       </div>
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <article
-            key={project.title}
-            className="card project-card"
-            data-categories={project.categories.join(' ')}
-          >
-            <h3>{project.title}</h3>
-            <p className="stack">{project.stack}</p>
-            <p>{project.description}</p>
-            <div className="project-tags" aria-label="Project categories">
-              {project.tags.map((tag) => (
-                <span key={`${project.title}-${tag}`} className="project-tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="project-links">
-              <a href={project.links.live} target="_blank" rel="noreferrer">
-                Live
-              </a>
-              <a href={project.links.code} target="_blank" rel="noreferrer">
-                Code
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
+      <MagicBento
+        projects={projects}
+        textAutoHide={true}
+        enableStars={true}
+        enableSpotlight={true}
+        enableBorderGlow={true}
+        enableTilt={false}
+        enableMagnetism={false}
+        clickEffect={true}
+        spotlightRadius={400}
+        particleCount={28}
+        glowColor="65, 211, 189"
+        disableAnimations={false}
+      />
     </section>
   );
 }

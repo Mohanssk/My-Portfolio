@@ -6,6 +6,52 @@ export const projectFilters = [
   { label: 'Frontend', value: 'frontend' },
 ];
 
+export const skillsByCategory = [
+  {
+    title: 'Languages',
+    skills: [
+      { name: 'JavaScript', logo: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
+      { name: 'Python', logo: 'https://cdn.simpleicons.org/python/3776AB' },
+      { name: 'C++', logo: 'https://cdn.simpleicons.org/cplusplus/00599C' },
+      { name: 'PostgreSQL', logo: 'https://cdn.simpleicons.org/postgresql/4169E1' },
+      { name: 'HTML5', logo: 'https://cdn.simpleicons.org/html5/E34F26' },
+      { name: 'CSS3', logo: 'https://cdn.simpleicons.org/css/1572B6' },
+    ],
+  },
+  {
+    title: 'Frameworks',
+    skills: [
+      { name: 'React.js', logo: 'https://cdn.simpleicons.org/react/61DAFB' },
+      { name: 'Node.js', logo: 'https://cdn.simpleicons.org/nodedotjs/339933' },
+      { name: 'Express.js', logo: 'https://cdn.simpleicons.org/express/FFFFFF' },
+      { name: 'Tailwind CSS', logo: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
+      { name: 'Bootstrap 5', logo: 'https://cdn.simpleicons.org/bootstrap/7952B3' },
+    ],
+  },
+  {
+    title: 'Tools',
+    skills: [
+      { name: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
+      { name: 'GitHub', logo: 'https://cdn.simpleicons.org/github/FFFFFF' },
+      { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+      { name: 'Vercel', logo: 'https://cdn.simpleicons.org/vercel/FFFFFF' },
+      { name: 'npm', logo: 'https://cdn.simpleicons.org/npm/CB3837' },
+      { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman/FF6C37' },
+    ],
+  },
+  {
+    title: 'Core Concepts',
+    skills: [
+      { name: 'Data Structures', logo: 'https://cdn.simpleicons.org/leetcode/FFA116' },
+      { name: 'Algorithms', logo: 'https://cdn.simpleicons.org/codeforces/1F8ACB' },
+      { name: 'REST APIs', logo: 'https://cdn.simpleicons.org/swagger/85EA2D' },
+      { name: 'OOP', logo: 'https://cdn.simpleicons.org/openjdk/ED8B00' },
+      { name: 'Auth', logo: 'https://cdn.simpleicons.org/auth0/EB5424' },
+      { name: 'Responsive Design', logo: 'https://cdn.simpleicons.org/css/1572B6' },
+    ],
+  },
+];
+
 export const projects = [
   {
     title: 'Gyan Ganga',

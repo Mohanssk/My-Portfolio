@@ -1,4 +1,5 @@
 import React from 'react';
+import { skillsByCategory } from '../data/portfolioData';
 
 function Skills() {
   return (
@@ -7,22 +8,31 @@ function Skills() {
         <h2>Technical Skills</h2>
       </div>
       <div className="skills-grid">
-        <article className="card skill-card">
-          <h3>Languages</h3>
-          <p>JavaScript (ES6+), Python, C++, SQL, HTML5, CSS3</p>
-        </article>
-        <article className="card skill-card">
-          <h3>Frameworks</h3>
-          <p>React.js, Node.js, Express.js, Tailwind CSS, Bootstrap 5</p>
-        </article>
-        <article className="card skill-card">
-          <h3>Tools</h3>
-          <p>Git, GitHub, VS Code, Vercel, npm, Postman</p>
-        </article>
-        <article className="card skill-card">
-          <h3>Core Concepts</h3>
-          <p>Data Structures, Algorithms, REST APIs, OOP, Auth, Responsive Design</p>
-        </article>
+        {skillsByCategory.map((group, groupIndex) => (
+          <article
+            key={group.title}
+            className="card skill-card"
+            style={{ '--group-delay': `${groupIndex * 90}ms` }}
+          >
+            <h3>{group.title}</h3>
+            <div className="skill-marquee" aria-label={`${group.title} skills`}>
+              <ul
+                className="skill-track"
+                style={{
+                    animationDuration: `${34 + groupIndex * 4}s`,
+                  animationDirection: groupIndex % 2 ? 'reverse' : 'normal',
+                }}
+              >
+                {[...group.skills, ...group.skills].map((skill, skillIndex) => (
+                  <li key={`${skill.name}-${skillIndex}`} className="skill-item">
+                    <img src={skill.logo} alt={`${skill.name} logo`} loading="lazy" />
+                    <span>{skill.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
