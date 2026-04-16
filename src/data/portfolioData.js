@@ -86,7 +86,7 @@ export const projects = [
     tags: ['AI/ML', 'Full Stack', 'Backend'],
     links: {
       live: 'https://roadmap-project-mk7.vercel.app/',
-      code: 'https://github.com/Mohanssk/Ai-powerd-leaningpath',
+      code: 'https://github.com/Mohanssk/Roadmap-project',
     },
   },
   {
