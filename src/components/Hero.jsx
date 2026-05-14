@@ -1,26 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SoftAurora from './SoftAurora';
 
 function Hero() {
+  const [showAurora, setShowAurora] = useState(
+    typeof window !== 'undefined' ? window.innerWidth > 760 : false
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia('(max-width: 760px)');
+    const updateAurora = () => setShowAurora(!mediaQuery.matches);
+    updateAurora();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateAurora);
+    } else {
+      mediaQuery.addListener(updateAurora);
+    }
+
+    return () => {
+      if (typeof mediaQuery.removeEventListener === 'function') {
+        mediaQuery.removeEventListener('change', updateAurora);
+      } else {
+        mediaQuery.removeListener(updateAurora);
+      }
+    };
+  }, []);
+
   return (
     <section className="hero container section reveal">
       <div className="hero-aurora" aria-hidden="true">
-        <SoftAurora
-          speed={0.6}
-          scale={1.5}
-          brightness={1}
-          color1="#f7f7f7"
-          color2="#41d3bd"
-          noiseFrequency={2.5}
-          noiseAmplitude={1}
-          bandHeight={0.5}
-          bandSpread={1}
-          octaveDecay={0.1}
-          layerOffset={0}
-          colorSpeed={1}
-          enableMouseInteraction
-          mouseInfluence={0.25}
+        {showAurora ? (
+          <SoftAurora
+            speed={0.6}
+            scale={1.5}
+            brightness={1}
+            color1="#f7f7f7"
+            color2="#41d3bd"
+            noiseFrequency={2.5}
+            noiseAmplitude={1}
+            bandHeight={0.5}
+            bandSpread={1}
+            octaveDecay={0.1}
+            layerOffset={0}
+            colorSpeed={1}
+            enableMouseInteraction
+            mouseInfluence={0.25}
           />
+        ) : null}
       </div>
       <div className="hero-layout">
         <div className="hero-intro">
