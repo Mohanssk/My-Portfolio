@@ -167,6 +167,7 @@ const ProfileCardComponent = ({
     (event) => {
       const shell = shellRef.current;
       if (!shell || !tiltEngine) return;
+      if (event.pointerType === 'touch') return;
       const { x, y } = getOffsets(event, shell);
       tiltEngine.setTarget(x, y);
     },
@@ -177,6 +178,7 @@ const ProfileCardComponent = ({
     (event) => {
       const shell = shellRef.current;
       if (!shell || !tiltEngine) return;
+      if (event.pointerType === 'touch') return;
 
       shell.classList.add('active');
       shell.classList.add('entering');
